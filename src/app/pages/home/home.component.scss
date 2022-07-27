@@ -1,0 +1,318 @@
+.mainFeatureSection{
+  height: 400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .leftpanel.animate__animated.animate__fadeIn {
+    --animate-delay: 2s;
+  }
+  .leftpanel{
+    .overlayShadow{
+      height: 400px;
+      width: 49%;
+      position: absolute;
+      top: 60px;
+      background-color: rgba($color: #d00000, $alpha: .4);
+      z-index: 10;
+    }
+    height: 100%;
+    width: 98%;
+    margin: auto;
+    img{
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .tag{
+      height: 30px;
+      width: 100px;
+      position: absolute;
+      top: 60px;
+      background-color: #d00000;
+      color: white;
+      z-index: 11;
+      text-align: center;
+    }
+    .discount{
+      position: absolute;
+      top: 300px;
+      left: 20px;
+      h1{
+        font-size: 60px;
+      }
+      h2{
+        margin-left: 40px;
+      }
+      z-index: 12;
+      color: white;
+    }
+    .discountSummary{
+      position: absolute;
+      top: 390px;
+      left: 100px;
+      z-index: 12;
+      color: white;
+    }
+  }
+  .rightpanel{
+    height: 100%;
+    width: 100%;
+    .toppanel{
+      height: 48%;
+      width: 98%;
+      background-color: #fcbf49;
+      margin: auto;
+      margin-top: 1%;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      overflow: hidden;
+      .info{
+        text-align: center;
+        height: 100%;
+        padding-top: 20%;
+        color: #d00000;
+        h1{
+          font-size: 40px;
+          font-weight: bolder;
+        }
+      }
+      .images{
+        width: 100%;
+        height: 194px;
+        img{
+          width:100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .overlayShadow{
+          position: absolute;
+          top:67px;
+          right: 0;
+          height: 194px;
+          width: 25%;
+          background-color:rgba($color: #fcbf49, $alpha: .4);
+        }
+      }
+
+    }
+    .bottompannel{
+      height: 48%;
+      width: 98%;
+      background-color:#eae2b7;
+      margin: auto;
+      margin-top: 1%;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      overflow: hidden;
+      .info{
+        text-align: center;
+        height: 100%;
+        padding-top: 20%;
+        color: #d00000;
+        h1{
+          font-size: 40px;
+          font-weight: bolder;
+        }
+      }
+      .images{
+        width: 100%;
+        height: 194px;
+        .tag{
+          text-align: center;
+          height: 30px;
+          width: auto;
+          color: #d00000;
+          position: absolute;
+          top: 270px;
+          padding-left: 11px;
+          padding-right: 10px;
+          background-color: #eae2b7;
+          h1{
+            font-size: 20px;
+            font-weight: bolder;
+          }
+        }
+        img{
+          width:100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .overlayShadow{
+          position: absolute;
+          top:265px;
+          left: 50.5%;
+          height: 194px;
+          width: 25%;
+          background-color:rgba($color: #eae2b7, $alpha: .4);
+        }
+      }
+    }
+  }
+}
+.mainSection{
+  display: grid;
+  grid-template-columns: repeat(2, 15% 80%);
+  margin-top: 20px;
+  .leftpanel{
+    padding-top: 100px;
+    .CategoryNonExpansion{
+      .categoryHeader{
+        display: grid;
+        grid-template-columns: repeat(2,24px 100px);
+        text-align: left;
+        h2{
+          font-weight: bolder;
+          font-size: 20px;
+          margin-left: 2px;
+        }
+        mat-icon{
+          font-size: 30px;
+        }
+      }
+      .categories{
+        text-align: center;
+      }
+    }
+    .Categoryexpansion{
+      display: none;
+    }
+
+  }
+  .rightpanel{
+    margin-left: 5%;
+    .panelHeader{
+      display: grid;
+      grid-template-columns: repeat(2,80% 20%);
+      .headerTag{
+        padding-left: 10%;
+      }
+    }
+  }
+}
+@media screen and (max-width:870px){
+  .mainSection{
+    grid-template-columns: repeat(1,1fr);
+    .leftpanel{
+      padding-top: 2px;
+      .CategoryNonExpansion{
+        display: none;
+      }
+      .Categoryexpansion{
+        display: block;
+        .categories{
+          text-align: center;
+        }
+      }
+
+    }
+    .rightpanel{
+      margin-top: 20px;
+      .panelHeader{
+        grid-template-columns: repeat(1, 1fr);
+        .headerTag{
+          padding-left: 10%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:750px) {
+  .mainFeatureSection{
+    grid-template-columns: repeat(1,1fr);
+    min-height: 800px;
+    .leftpanel{
+      .overlayShadow{
+        width: 98%;
+        margin: auto;
+      }
+    }
+    .rightpanel{
+      height: 100%;
+      width: 100%;
+      .toppanel{
+        .images{
+          overflow: hidden;
+          .overlayShadow{
+            background-color: rgba($color: #d00000, $alpha: 0);
+          }
+        }
+      }
+      .bottompannel{
+        .images{
+          overflow: hidden;
+          .tag{
+            top: 665px;
+          }
+          .overlayShadow{
+            background-color: rgba($color: #d00000, $alpha: 0);
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.loader{
+  height: 10vh;
+  width: 100%;
+}
+.lds-ellipsis {
+  position: relative;
+  margin: auto;
+  margin-top: 25%;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #d00000;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}

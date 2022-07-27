@@ -1,0 +1,87 @@
+<div class="mainFeatureSection" *ngIf="this.ItemsOnDiscount.length>0">
+  <div class="leftpanel"  (click)="ViewItem(ItemsOnDiscount[0].id)">
+  <div class="overlayShadow animate__animated animate__fadeIn animate__delay-1s"></div>
+  <div class="tag animate__animated animate__fadeInLeft animate__delay-1s"><h3>Hot Deals</h3></div>
+  <img class="animate__animated animate__zoomIn" [src]="ItemsOnDiscount[0].itemImages[0].imageURL" [alt]="ItemsOnDiscount[0].itemImages[0].imageName">
+  <div class="discount animate__animated animate__zoomIn animate__delay-1s"><h1>30%</h1><h2>DISCOUNT</h2></div>
+  <p class="discountSummary animate__animated animate__fadeIn animate__delay-2s">on all {{ItemsOnDiscount[0].itemName}}</p>
+  </div>
+  <div class="rightpanel animate__animated animate__fadeIn">
+    <div class="toppanel" (click)="ViewItem(ItemsOnDiscount[1].id)">
+      <div class="info animate__animated animate__zoomIn animate__delay-1s">
+        <h1>New Arrivals</h1>
+        <h2>{{ItemsOnDiscount[1].itemName}}</h2>
+      </div>
+      <div class="images">
+        <div class="overlayShadow animate__animated animate__fadeIn animate__delay-2s"></div>
+        <img [src]="ItemsOnDiscount[1].itemImages[0].imageURL" [alt]="ItemsOnDiscount[0].itemImages[0].imageName">
+      </div>
+
+    </div>
+    <div class="bottompannel" (click)="ViewItem(ItemsOnDiscount[2].id)">
+      <div class="images">
+        <div class="overlayShadow animate__animated animate__fadeIn animate__delay-2s"></div>
+        <img [src]="ItemsOnDiscount[2].itemImages[0].imageURL" [alt]="ItemsOnDiscount[2].itemImages[0].imageURL">
+        <div class="tag animate__animated animate__zoomIn animate__delay-2s"><h3>on sale</h3></div>
+      </div>
+      <div class="info animate__animated animate__zoomIn animate__delay-1s">
+        <h1>{{ItemsOnDiscount[2].itemName}}</h1>
+        <h2>On Sale</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mainSection"  *ngIf="this.ItemsOnDiscount.length>0">
+  <div class="leftpanel">
+    <div class="CategoryNonExpansion">
+    <div class="categoryHeader"><mat-icon>menu</mat-icon><h2>Categories</h2></div>
+    <mat-list class="categories">
+      <mat-list-item>Electronics</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Kitchen ware</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Clothes</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Electricals</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Gaming</mat-list-item>
+    </mat-list></div>
+    <mat-accordion class="Categoryexpansion">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>menu</mat-icon>Categories
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list class="categories-exp">
+          <mat-list-item>Electronics</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Kitchen ware</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Clothes</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Electricals</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Gaming</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+  <div class="rightpanel">
+    <div class="panelHeader">
+      <div class="spacer"></div>
+      <form class="searchForm">
+        <mat-form-field class="searchBar" appearance="outline">
+          <mat-label><mat-icon>search</mat-icon> Search </mat-label>
+          <input matInput placeholder="Look for Items">
+        </mat-form-field>
+      </form>
+    </div>
+    <router-outlet ></router-outlet>
+  </div>
+</div>
+<div class="loader">
+  <div class="lds-ellipsis" *ngIf="this.ItemsOnDiscount.length<1"><div></div><div></div><div></div><div></div></div>
+  </div>
+

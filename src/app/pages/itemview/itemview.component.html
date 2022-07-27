@@ -1,0 +1,88 @@
+<div class="main">
+  <div class="topPanel">
+    <div class="itemImages">
+      <img [src]="musikaItem.itemImages[0].imageURL" [alt]="musikaItem.itemImages[0].imageName">
+      <div class="moreImages">
+        <img *ngFor="let item of musikaItem.itemImages" [src]="item.imageURL" [alt]="item.imageName">
+      </div>
+    </div>
+    <div class="info">
+      <h1>{{musikaItem.itemName}}</h1>
+      <h3>{{musikaItem.supplierName}}</h3>
+      <div class="supplierRating" >
+        <mat-icon *ngFor="let item of [].constructor(GetIntegerRating(musikaItem.id))" style="color: rgb(249, 253, 7);">grade</mat-icon>
+        <mat-icon *ngIf="GetFloatRating(musikaItem.id)>0" style="color: rgb(249, 253, 7);">star_half</mat-icon>
+        <mat-icon *ngFor="let item of [].constructor(4-GetIntegerRating(musikaItem.id))"style="color: rgb(238, 236, 236);">grade</mat-icon>
+      </div>
+      <h2 style="color:#d00000 ;">${{musikaItem.itemPrice}}</h2>
+      <div class="divider"></div>
+      <p>{{musikaItem.itemDescription}}</p>
+      <h4 style="margin:0;margin-left:45px;"><b>Quantity</b></h4>
+      <div class="quantity">
+        <div class="qntyCount">
+          <button mat-icon-button (click)="changeQuantity('subtract')"><mat-icon>remove</mat-icon></button>
+          <p>{{quantity}}</p>
+          <button mat-icon-button (click)="changeQuantity('add')"><mat-icon>add</mat-icon></button>
+        </div>
+        <button mat-raised-button (click)="AddToCart(musikaItem.id)" class="cartBtn"><mat-icon>add_shopping_cart</mat-icon></button>
+        <div class="brkr"></div>
+        <button mat-stroked-button (click)="AddToWishList(musikaItem.id)" class="favBtn" style="color:red ;"> <mat-icon>favorite</mat-icon></button>
+        <div class="brkr"></div>
+        <button mat-raised-button class="cartBtn" (click)="CheckOut()"><mat-icon>shopping_cart_checkout</mat-icon></button>
+      </div>
+
+    </div>
+  </div>
+
+  <mat-card class="reviews">
+    <mat-card-header>
+      <mat-card-title>Reviews(1)</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="commentCard">
+      <mat-card class="comment" *ngFor="let review of musikaItem.reviews">
+        <mat-card-header>
+          <mat-card-title>NAME</mat-card-title>
+          <mat-card-subtitle>
+            {{review.commentDate}}
+          </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+<p> {{review.comment}}</p>
+        </mat-card-content>
+        <mat-card-footer>
+          <div class="supplierRating">
+            <mat-icon style="color: rgb(249, 253, 7);">grade</mat-icon>
+            <mat-icon style="color: rgb(238, 236, 236);">grade</mat-icon>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+      <form>
+        <h1>Leave a Review</h1>
+        <mat-form-field class="reviewinput" appearance="fill">
+          <mat-label>Leave a review</mat-label>
+          <textarea matInput placeholder="Leave your review about the product here"></textarea>
+        </mat-form-field>
+        <br>
+        <h3 style="font-weight: bolder;">Rate Service/Product</h3>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+          <mat-icon style="color: rgb(249, 253, 7);">grade</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+          <mat-icon style="color: rgb(238, 236, 236);">grade</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+          <mat-icon style="color: rgb(238, 236, 236);">grade</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+          <mat-icon style="color: rgb(238, 236, 236);">grade</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+          <mat-icon style="color: rgb(238, 236, 236);">grade</mat-icon>
+        </button>
+        <br>
+        <button style="color:#d00000;" mat-raised-button>Submit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

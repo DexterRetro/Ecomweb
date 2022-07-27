@@ -1,0 +1,29 @@
+<div class="LogInCard">
+  <div class="leftPanel"><h1>PAMUSIKA</h1><h2>Online</h2></div>
+  <div class="rightPanel">
+    <form [formGroup]="logInForm" class="Form">
+      <h1>Log In</h1>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Enter your Username" formControlName="username">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Enter your Password" formControlName="password">
+      </mat-form-field>
+      <p  class="promptTxt"><a>Forgot Password?</a></p>
+      <br>
+      Or login with
+      <br>
+      <span class="Socials">
+        <i class="fab fa-facebook-square" style="color: rgb(66, 103 ,178);"></i>
+        <i class="fab fa-google" style="color: #db3236;"></i>
+       </span>
+       <br>
+      <button (disabled)="(!logInForm.valid)" (click)="LogIn()" mat-raised-button class="half-width" (click)="LogIn()">LOG IN</button>
+      <br>
+      <br>
+      <p  class="promptTxt">Don't Have Account?<a [routerLink]="'/account/signUp'">Sign Up</a></p>
+    </form>
+  </div>
+</div>

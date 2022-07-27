@@ -1,0 +1,89 @@
+
+.SignUpCard{
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 4px 0 8px 0 rgba($color: #000000, $alpha: 0.5);
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  text-align: center;
+  .leftPanel{
+    background-color: #fcbf49;
+    text-align: center;
+    color: white;
+    width: 100%;
+    padding-top: 50%;
+    h1{
+      margin-top: 5px;
+      margin-left: 10px;
+      font-family: 'Bebas Neue';
+      font-size: 80px;
+      font-weight: bolder;
+      padding: 0;
+    }
+    h2{
+      margin-top: 10px;
+      font-size: 50px;
+      font-family: 'Arima';
+      padding: 0;
+    }
+  }
+  .rightPanel{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    .Form{
+      width: 100%;
+      h1{
+        font-family: 'Bebas Neue';
+        font-size: 40px;
+        color: #d00000;
+      }
+      .half-width{
+        width: 50%;
+        margin: auto;
+        background-color: #fcbf49;
+        color: white;
+        margin-top: 10px;
+      }
+      .full-width{
+        width: 90%;
+        margin: auto;
+        margin-top: 10px;
+      }
+      .promptTxt{
+        text-align: right;
+        width: 90%;
+        padding-right: 10%;
+        i{
+          color: #d00000;
+        }
+        i:hover{
+          cursor: pointer;
+        }
+      }
+
+      .Socials{
+        font-size: 30px;
+        text-align: center;
+        width: 100%;
+        padding-left: 10px;
+        a{
+          margin-right: 10px;
+        }
+        a:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+}
+@media screen and (max-width:780px){
+  .LogInCard,.SignUpCard{
+    grid-template-columns: repeat(1,100%);
+    box-shadow: 4px 0 8px 0 rgba($color: #000000, $alpha: 0);
+    .leftPanel{
+      display:none;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.main{
+  .ItemList{
+    overflow-y: auto;
+    height: 100%;
+    width: 85%;
+    background-color: rgba(255, 255, 255, 0.555);
+    .cartItem{
+      display: inline-block;
+      width:200px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      img{
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .divider{
+      height: 2px;
+      width: 90%;
+      background-color: grey;
+    }
+  }
+  .billingForm{
+    width: 90%;
+    height: 100%;
+    .payments{
+      width: 100%;
+      i{
+        font-size: 40px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .formGrid{
+      display: grid;
+      grid-template-columns: repeat(2,45%);
+      column-gap: 10px;
+    }
+  }
+}
+.item-full-width{
+  width: 100%;
+
+}
+.item-half-width{
+  width: 40%;
+}
+
+.btn{
+  background-color: #fcbf49;
+  color: white;
+  margin-right: 20px;
+}

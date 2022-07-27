@@ -1,0 +1,32 @@
+.mainCard{
+  min-height: 500px;
+  .cardContent{
+    padding-left: 45px;
+    .ItemCard{
+      display: inline-block;
+      margin-left: 10px;
+      width: 250px;
+      height: 450px;
+      margin-bottom: 5px;
+      img{
+        padding-left: 15px;
+        height: 200px;
+        width: 250px;
+        object-position: center;
+        object-fit: cover;
+      }
+      .desc{
+        width: 200px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .cardButtons{
+        button{
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+
+}

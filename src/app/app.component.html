@@ -1,0 +1,73 @@
+<mat-toolbar class="header animate__animated animate__fadeInDownBig">
+  <span (click)="Navigate('')" class="HeaderLogo"><h1>Pamusika</h1> <h3>Online</h3></span>
+  <span class="spacer"></span>
+  <form class="country">
+    <mat-form-field class="field" appearance="outline"
+    hideRequiredMarker="true">
+  <mat-select>
+    <mat-option>-- None --</mat-option>
+    <mat-option value="option">Option</mat-option>
+  </mat-select>
+  <mat-label><img src="" alt=""><b> ZW</b>/<i> USD</i></mat-label>
+  </mat-form-field>
+  </form>
+  <button mat-icon-button class="btn" aria-label="Profile" routerLink="account">
+    <mat-icon>person</mat-icon>
+  </button>
+  <button mat-icon-button class="btn" aria-label="Cart" routerLink="checkout" [matBadgeHidden]="getQueNumber('cart')<1" [matBadge]="getQueNumber('cart')">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <button mat-icon-button class="btn" aria-label="Cart" [matBadgeHidden]="getQueNumber('wishlist')<1" [matBadge]="getQueNumber('wishlist')">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button class="btnMobile" mat-icon-button [matMenuTriggerFor]="menu" aria-label="ShowMenu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" class="matMenu">
+    <form class="country">
+      <mat-form-field class="field" appearance="outline"
+      hideRequiredMarker="true">
+    <mat-select>
+      <mat-option>-- None --</mat-option>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-label><img src="" alt=""><b> ZW</b>/<i> USD</i></mat-label>
+    </mat-form-field>
+    </form>
+    <button mat-menu-item routerLink="account">
+      <mat-icon>person</mat-icon>
+      <span>Profile</span>
+    </button>
+    <button mat-menu-item routerLink="checkout" [matBadgeHidden]="getQueNumber('cart')<1" [matBadge]="getQueNumber('cart')">
+      <mat-icon>shopping_cart</mat-icon>
+      <span>Cart</span>
+    </button>
+    <button mat-menu-item [matBadgeHidden]="getQueNumber('wishlist')<1" [matBadge]="getQueNumber('wishlist')">
+      <mat-icon>favorite</mat-icon>
+      <span>wish list</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+<div class="MainCOntent"><router-outlet ></router-outlet></div>
+<footer>
+  <div class="footer-content">
+      <h3>Pamusika Online</h3>
+      <p>Made By Dexter Muwodzeri</p>
+      <ul class="socials">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+      </ul>
+  </div>
+  <div class="footer-bottom">
+      <p>copyright &copy; <a href="#">BroHalla</a>  </p>
+              <div class="footer-menu">
+                <ul class="f-menu">
+                  <li><a href="">Home</a></li>
+                </ul>
+              </div>
+  </div>
+
+</footer>

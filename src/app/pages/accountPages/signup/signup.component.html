@@ -1,0 +1,61 @@
+<div class="SignUpCard">
+  <div class="leftPanel"><h1>PAMUSIKA</h1><h2>Online</h2></div>
+  <div class="rightPanel">
+    <form [formGroup]="signupForm" class="Form">
+      <h1>SIGN UP</h1>
+      <mat-form-field  class="full-width" appearance="outline">
+        <mat-label>First Name(s)</mat-label>
+        <input formControlName="firstNames" matInput placeholder="Enter your First Name(s)">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Surname</mat-label>
+        <input formControlName="surname" matInput placeholder="Enter your Surname">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput placeholder="Enter your Username">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput type="password" placeholder="Enter your Password">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" placeholder="Re-enter your Password">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Address</mat-label>
+        <textarea formControlName="address" matInput placeholder="Ex. 1234 Sadza street"></textarea>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Country</mat-label>
+        <select formControlName="country" matNativeControl required>
+          <option value=""></option>
+          <option value="zw">Zimbabwe</option>
+        </select>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>City/Town</mat-label>
+        <select formControlName="city" matNativeControl required>
+          <option value=""></option>
+          <option value="hre">Harare</option>
+          <option value="cht">Chitungwiza</option>
+          <option value="zsh">Zvishavane</option>
+          <option value="blw">Bulawayo</option>
+        </select>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input formControlName="telephone" matInput type="phone" placeholder="Ex. +263771122334">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput type="email" placeholder="Ex. example@gmail.com">
+      </mat-form-field>
+      <button (disabled)="!signupForm.valid" (click)="SignUp()" mat-raised-button class="half-width">SIGN UP</button>
+      <br>
+      <br>
+      <p  class="promptTxt">Already Have Account?<a [routerLink]="'/account/logIn'">Log In</a></p>
+    </form>
+  </div>
+</div>

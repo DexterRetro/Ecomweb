@@ -1,0 +1,102 @@
+<div class="Main" *ngIf="featureItems.length>0">
+<mat-card class="ItemMainCard">
+  <mat-card-title>Best Seller Products</mat-card-title>
+  <mat-card-content>
+    <p *ngIf="featureItems.length<1">No Items To View</p>
+    <ul class="listItem">
+      <li (click)="ViewItem(item.id)" *ngFor="let item of featureItems">
+        <mat-card class="ItemCard">
+          <mat-card-header>
+            <mat-card-title>{{item.itemName}}</mat-card-title>
+            <mat-card-subtitle>Supplier: {{item.supplierName}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="item.itemImages[0].imageURL" [alt]="item.itemImages[0].imageName">
+          <mat-card-content>
+            <p class="desc">
+              {{item.itemDescription}}
+            </p>
+            <h3>${{item.itemPrice}}</h3>
+          </mat-card-content>
+          <mat-card-actions class="cardButtons">
+            <button mat-button (click)="AddToCart(item.id)"> <mat-icon>add_shopping_cart</mat-icon></button>
+            <button mat-button (click)="AddToWishList(item.id)" style="color:red ;"> <mat-icon>favorite</mat-icon></button>
+          </mat-card-actions>
+          <mat-card-footer>
+            <div class="supplierRating">
+              <mat-icon *ngFor="let item of [].constructor(GetIntegerRating(item.id))">grade</mat-icon>
+              <mat-icon *ngIf="GetFloatRating(item.id)>0">star_half</mat-icon>
+            </div>
+          </mat-card-footer>
+        </mat-card>
+
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+<mat-card class="ItemMainCard">
+  <mat-card-title>New Products</mat-card-title>
+  <mat-card-content>
+    <p *ngIf="featureItems.length<1">No Items To View</p>
+    <ul class="listItem" *ngIf="featureItems.length>0">
+      <li (click)="ViewItem(item.id)" *ngFor="let item of featureItems">
+        <mat-card class="ItemCard">
+          <mat-card-header>
+            <mat-card-title>{{item.itemName}}</mat-card-title>
+            <mat-card-subtitle>Supplier: {{item.supplierName}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="item.itemImages[0].imageURL" [alt]="item.itemImages[0].imageName">
+          <mat-card-content>
+            <p class="desc">
+              {{item.itemDescription}}
+            </p>
+            <h3>${{item.itemPrice}}</h3>
+          </mat-card-content>
+          <mat-card-actions class="cardButtons">
+            <button mat-button (click)="AddToCart(item.id)"> <mat-icon>add_shopping_cart</mat-icon></button>
+            <button mat-button (click)="AddToWishList(item.id)" style="color:red ;"> <mat-icon>favorite</mat-icon></button>
+          </mat-card-actions>
+          <mat-card-footer>
+            <div class="supplierRating">
+              <mat-icon *ngFor="let item of [].constructor(GetIntegerRating(item.id))">grade</mat-icon>
+              <mat-icon *ngIf="GetFloatRating(item.id)>0">star_half</mat-icon>
+            </div>
+          </mat-card-footer>
+        </mat-card>
+      </li>
+    </ul>
+  </mat-card-content>
+ </mat-card>
+<mat-card class="ItemMainCard">
+  <mat-card-title>Featured Products</mat-card-title>
+  <mat-card-content>
+    <p *ngIf="featureItems.length<1">No Items To View</p>
+    <ul class="listItem" *ngIf="featureItems.length>0">
+      <li (click)="ViewItem(item.id)" *ngFor="let item of featureItems">
+        <mat-card class="ItemCard">
+          <mat-card-header>
+            <mat-card-title>{{item.itemName}}</mat-card-title>
+            <mat-card-subtitle>Supplier: {{item.supplierName}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="item.itemImages[0].imageURL" [alt]="item.itemImages[0].imageName">
+          <mat-card-content>
+            <p class="desc">
+              {{item.itemDescription}}
+            </p>
+            <h3>${{item.itemPrice}}</h3>
+          </mat-card-content>
+          <mat-card-actions class="cardButtons">
+            <button mat-button (click)="AddToCart(item.id)"> <mat-icon>add_shopping_cart</mat-icon></button>
+            <button mat-button (click)="AddToWishList(item.id)" style="color:red ;"> <mat-icon>favorite</mat-icon></button>
+          </mat-card-actions>
+          <mat-card-footer>
+            <div class="supplierRating">
+              <mat-icon *ngFor="let item of [].constructor(GetIntegerRating(item.id))">grade</mat-icon>
+              <mat-icon *ngIf="GetFloatRating(item.id)>0">star_half</mat-icon>
+            </div>
+          </mat-card-footer>
+        </mat-card>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+</div>

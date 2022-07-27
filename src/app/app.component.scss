@@ -1,0 +1,178 @@
+.header{
+    height: 50px;
+    background-color: #fcbf49;
+    margin-bottom: 10px;
+    color: white;
+    .HeaderLogo{
+      display: grid;
+      grid-template-columns: repeat(2,62% 20%);
+      h1{
+        margin-top: 5px;
+        margin-left: 10px;
+        font-family: 'Bebas Neue';
+        font-size: 40px;
+        font-weight: bolder;
+        padding: 0;
+      }
+      h3{
+        margin-top: 10px;
+        font-size: 30px;
+        font-family: 'Arima';
+        padding: 0;
+        text-align: left;
+      }
+    }
+    .btnMobile{
+      display: none;
+    }
+    .country{
+      font-size: 12px;
+      height: 30px;
+      .field{
+        height: 100%;
+      }
+      margin-bottom: 15px;
+    }
+    .btn{
+      background-color: transparent;
+      color: white;
+    }
+}
+.spacer {
+ flex: 1 1 auto;
+}
+.MainCOntent{
+  min-height: 80vh;
+  height: auto;
+}
+@media  screen and (max-width:655px) {
+  .header{
+    .btnMobile{
+      display: block;
+      position: absolute;
+      right: 10px;
+
+    }
+    .matMenu{
+      .country{
+        width: 90%;
+        margin-right: 10%;
+      }
+    }
+    .btn,.country{
+      display: none;
+    }
+
+  }
+  .spacer{
+    display: none;
+  }
+}
+
+
+footer{
+  background: #fcbf49;
+  height: auto;
+  width: 100vw;
+  color: #d00000;
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #d00000;
+}
+.socials{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+.socials li{
+  margin: 0 10px;
+}
+.socials a{
+  text-decoration: none;
+  color: #d00000;
+  border: 1.1px solid white;
+  padding: 5px;
+
+  border-radius: 50%;
+
+}
+.socials a i{
+  font-size: 1.1rem;
+  width: 20px;
+
+
+  transition: color .4s ease;
+
+}
+.socials a:hover i{
+  color: #d00000;
+}
+
+.footer-bottom{
+  background: #fcbf49;
+  width: 100vw;
+  padding: 20px;
+padding-bottom: 40px;
+  text-align: center;
+}
+.footer-bottom p{
+float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom p a{
+color:#fcbf49;
+font-size: 16px;
+text-decoration: none;
+}
+.footer-bottom span{
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
+}
+.footer-menu{
+float: right;
+
+}
+.footer-menu ul{
+display: flex;
+}
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+.footer-menu ul li a{
+color: #d00000;
+text-decoration: none;
+}
+.footer-menu ul li a:hover{
+color: #d00000;
+}
+
+@media (max-width:500px) {
+.footer-menu ul{
+display: flex;
+margin-top: 10px;
+margin-bottom: 20px;
+}
+}

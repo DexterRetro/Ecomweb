@@ -1,0 +1,94 @@
+<div class="main">
+  <h1>Checkout</h1>
+  <mat-stepper labelPosition="bottom" [orientation]="(stepperOrientation | async)!">
+    <mat-step label="Cart" state="cart">
+      <div class="ItemList">
+        <div class="gridView">
+          <mat-card *ngFor="let item of checkoutList" class="cartItem">
+            <mat-card-header>
+              <mat-card-title>
+                {{item.item.itemName}}
+              </mat-card-title>
+              <mat-card-subtitle>
+                ${{item.item.itemPrice}}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="item.item.itemImages[0].imageURL" [alt]="item.item.itemImages[0].imageURL">
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-stroked-button style="color: red;"><mat-icon>delete</mat-icon> Remove</button>
+            </mat-card-actions>
+          </mat-card>
+
+        </div>
+        <div class="divider"></div>
+        <h3><b>Total: </b> $300</h3>
+      </div>
+      <div>
+        <button class="btn" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step label="Payment" state="pay">
+      <form class="billingForm" action="">
+        <h1>Payment</h1>
+        <p>Accepted Cards</p>
+        <span class="payments">
+         <i class="fab fa-cc-visa" style="color: rgb(26, 31, 113);"></i>
+         <i class="fab fa-cc-mastercard" style="color:#FF5F00;"></i>
+         <i class="fab fa-cc-paypal" style="color: rgb(37, 59, 128);"></i>
+        </span>
+        <mat-form-field class="item-full-width" appearance="outline">
+         <mat-label>Name on card</mat-label>
+         <input matInput placeholder="John Doe">
+       </mat-form-field>
+       <br>
+       <mat-form-field class="item-full-width" appearance="outline">
+         <mat-label>Card Number</mat-label>
+         <input matInput type="number" placeholder="1111-2222-3333-4444">
+       </mat-form-field>
+       <br>
+
+       <div class="item-full-width formGrid" >
+        <mat-form-field class="item-full-width" appearance="outline">
+          <mat-label>Exp Month</mat-label>
+          <input matInput placeholder="August">
+        </mat-form-field>
+        <mat-form-field class="item-full-width" appearance="outline">
+          <mat-label>Exp Year</mat-label>
+          <input type="number" matInput>
+        </mat-form-field>
+       </div>
+       <mat-form-field class="item-half-width" appearance="outline">
+        <mat-label>CVV</mat-label>
+        <input type="number" matInput>
+      </mat-form-field>
+       <mat-form-field class="item-full-width" appearance="outline">
+         <mat-label>Shipping Options</mat-label>
+         <select matNativeControl required>
+           <option value=" ">Please Select</option>
+           <option value="dhl">$10 DHL (takes 1wks)</option>
+           <option value="postOffice">$2 PostOffice Mailing (takes 3wks)</option>
+           <option value="fedex">$10 FedEx (takes 1wks)</option>
+           <option value="fastShiping">$15 pamusika fast Shipping (takes 3-5days)</option>
+         </select>
+       </mat-form-field>
+       </form>
+      <div>
+        <button class="btn" mat-button matStepperPrevious>Back</button>
+        <button class="btn" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step label="Step 3">
+      <p>Items will Be Delivered to You Soon!</p>
+    </mat-step>
+
+    <!-- Icon overrides. -->
+    <ng-template matStepperIcon="cart">
+      <mat-icon>shopping_cart</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="pay">
+      <mat-icon>payments</mat-icon>
+    </ng-template>
+  </mat-stepper>
+</div>
